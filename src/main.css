@@ -1,0 +1,61 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+td {
+  text-align: center;
+}
+
+.chart-table {
+  border-spacing: 8px;
+}
+
+.chart-cell {
+  display: inline-block;
+}
+
+.chart-cell-grid {
+  display: grid;
+  grid-template-areas:
+    "romaji"
+    "main";
+}
+
+.chart-cell-table {
+  border: 4px solid;
+  border-radius: 16px;
+  border-spacing: 0;
+  z-index: 1;
+  grid-area: main;
+  align-self: center;
+  justify-self: center;
+}
+
+.kana {
+  font-size: 2.5em;
+}
+
+.kanji {
+  border-top: 1px solid;
+  font-size: 1em;
+}
+
+.hiragana {
+  border-right: 1px solid;
+}
+
+.kanji-hiragana {
+  border-right: 1px solid;
+}
+
+.romaji {
+  font-size: 0.5em;
+  z-index: 2;
+  grid-area: romaji;
+  align-self: start;
+  justify-self: center;
+  border: 2px solid;
+  border-radius: 1em;
+  padding: 0px 8px;
+  margin-bottom: 2px;
+}
