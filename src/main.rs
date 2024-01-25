@@ -73,13 +73,17 @@ impl KanaChartBuilder {
                 kana.common_source
             )
         };
-        let output_cell = self
+        let mut output_cell = self
             .cell_html
             .replace('@', &kana.romaji)
             .replace("あ", &kana.hiragana)
             .replace("ア", &kana.katakana)
             .replace(r#"<div class="kanji-placeholder" />"#, &kanji);
-        let output_cell = format!("<td>{}</td>", output_cell);
+        if !kana.deprecated {
+            output_cell =
+                output_cell.replace("chart-cell-table-deprecated", "chart-cell-table-in-use");
+        }
+        output_cell = format!("<td>{}</td>", output_cell);
         Ok(output_cell)
     }
 }
@@ -92,4 +96,5 @@ struct Kana {
     katakana: String,
     katakana_source: String,
     common_source: String,
+    deprecated: bool,
 }

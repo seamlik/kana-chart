@@ -22,13 +22,20 @@ td {
 }
 
 .chart-cell-table {
-  border: 4px solid;
   border-radius: 16px;
   border-spacing: 0;
   z-index: 1;
   grid-area: main;
   align-self: center;
   justify-self: center;
+}
+
+.chart-cell-table-in-use {
+  border: 4px solid;
+}
+
+.chart-cell-table-deprecated {
+  border: 4px dashed;
 }
 
 .kana {
